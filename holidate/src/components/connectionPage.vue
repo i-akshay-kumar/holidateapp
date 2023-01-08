@@ -3,7 +3,7 @@
     <div class="container-main">
       
       <center>
-        <button class="btn btn-b  btn-search " type="submit" @click.prevent="loadMatch">Show connections</button>
+        <button class="btn btn-b  btn-search " type="submit" @click.prevent="loadMatch">Reload connections</button>
       </center>
         <img src="../assets/dash-load.gif" class="img-loading"  alt="loading..." v-show="loadgif">
     <ul>
@@ -57,6 +57,11 @@ export default {
             loadgif : false
         }
     },
+
+    mounted(){
+      this.loadMatch();
+    },
+
     methods : {
 
         loadMatch(){
@@ -167,7 +172,7 @@ export default {
         
       }
       .contact-details{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
 
       .btn-contact p{
