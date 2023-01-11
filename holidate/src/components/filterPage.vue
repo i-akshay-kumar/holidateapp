@@ -167,7 +167,7 @@ export default {
       const fd = new FormData();
       fd.append("file", this.images);
       fd.append("userid", this.$store.state.userID);
-      Axios.post("http://localhost:3000/api/file", fd).then(
+      Axios.post("https://holidate.onrender.com/api/file", fd).then(
         (res) => {
           console.log(`image uploaded successfully, ${res}`);
         },
@@ -187,7 +187,7 @@ export default {
 
       };
       console.log(filterObj);
-      Axios.put("http://localhost:3000/api/file", filterObj).then(
+      Axios.put("https://holidate.onrender.com/api/file", filterObj).then(
         (res) => {
           this.imgload = false;
           this.userimg = true ;
@@ -214,7 +214,7 @@ export default {
         userid: this.$store.state.userID,
       };
 
-      Axios.post("http://localhost:3000/api/occasion", formObj).then(
+      Axios.post("https://holidate.onrender.com/api/occasion", formObj).then(
         (res) => {
           console.log("this is response", res);
         },
@@ -269,7 +269,7 @@ export default {
         userconnections : this.$store.state.connectionArr
       }
 
-      Axios.put("http://localhost:3000/api/connection", connectionObj).then(
+      Axios.put("https://holidate.onrender.com/api/connection", connectionObj).then(
         (res) =>{
           if(res.data.isMatch){
             this.isMatchFound = true;
