@@ -217,7 +217,7 @@ export default {
         password: this.password,
       };
 
-      await Axios.post("https://holidate.onrender.com/api/register", user).then(
+      await Axios.post("http://localhost:3000/api/register", user).then(
         (res) => {
           if(res.data.isUserRegistered){
             this.$router.push("/login");

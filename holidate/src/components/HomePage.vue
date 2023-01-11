@@ -83,7 +83,7 @@ export default {
       
       console.log("match array reset request sent");
 
-      await Axios.put("https://holidate.onrender.com/api/resetmatch", obj).then((res)=>{
+      await Axios.put("http://localhost:3000/api/resetmatch", obj).then((res)=>{
         console.log(res);
       }, 
       (err)=>{
@@ -91,7 +91,7 @@ export default {
       });
 
       console.log("delete request sent");
-      Axios.delete(`https://holidate.onrender.com/api/deleteuser/${obj.userid}`).then((res)=>{
+      Axios.delete(`http://localhost:3000/api/deleteuser/${obj.userid}`).then((res)=>{
         console.log(res);
       }, 
       
