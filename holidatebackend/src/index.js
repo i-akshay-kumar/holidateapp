@@ -47,7 +47,8 @@ app.post("/api/register", async (req, res) => {
 
         const registeredUser = await registerUser.save();
         res.status(200).json({
-            title: "user registered successfully"
+            title: "user registered successfully",
+            isUserRegistered : true 
         })
     } catch (err) {
         res.status(400).json({

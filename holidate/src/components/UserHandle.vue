@@ -120,7 +120,7 @@
                 type="submit"
                 class="btn btn-register-user btn-rounded w-75"
               >
-                Register Now
+                Create Account
               </button>
             </div>
           </form>
@@ -216,11 +216,10 @@ export default {
         email: this.email,
         password: this.password,
       };
-      console.log(user);
+
       await Axios.post("http://localhost:3000/api/register", user).then(
         (res) => {
-
-          if(res.data.title == "user registered successfully"){
+          if(res.data.isUserRegistered){
             this.$router.push("/login");
           }
           this.$store.state.isUserAvailable = ""
@@ -243,7 +242,6 @@ export default {
 <style scoped>
 .body-container {
   width: 100vw;
-  height: 100vh;
   background-image: url("../assets/banner2.jpg");
 }
 .btn-rounded {
