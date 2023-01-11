@@ -7,7 +7,9 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-app.use(cors());
+app.use(cors({
+    origin : "*"
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../../holidate/dist")))
