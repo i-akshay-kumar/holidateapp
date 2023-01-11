@@ -8,6 +8,7 @@ const path = require('path');
 const fs = require('fs');
 
 app.use(cors());
+app.options('*', cors());
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
